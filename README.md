@@ -48,3 +48,11 @@ Change app.module.ts
     HttpModule,
     SplitButtonModule
     ...
+
+
+    make a git directory.
+
+    git remote add origin https://github.com/jvdboom/angular-basic.git
+    git push -u origin master
+    ...
+
