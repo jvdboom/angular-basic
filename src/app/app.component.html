@@ -1,8 +1,16 @@
-<h1>
-  <h2>{{ clicks }}</h2>
-  <button pButton type="button" (click)="inverse()" class="ui-button-secondary" icon="fa-check" iconPos="left" label="secondary"></button>
-  <button pButton type="button" (click)="count()" class="ui-button-success"   icon="fa-check" iconPos="left" label="succes"></button>
-  <button pButton type="button" (click)="count()" class="ui-button-info"      icon="fa-check" iconPos="left" label="info"></button>
-  <button pButton type="button" (click)="count()" class="ui-button-warning"   icon="fa-check" iconPos="left" label="warning"></button>
-  <button pButton type="button" (click)="reset()" class="ui-button-danger"    icon="fa-check" iconPos="left" label="danger" [disabled]="cDisabled"></button>
-</h1>
+<div id="header">
+  <p-menubar styleClass="MenuLeft" [model]="cItems"></p-menubar>
+</div>
+<div id="content">
+  <router-outlet></router-outlet>
+  <div>
+    <h1>
+      <h2>{{ clicks }}</h2>
+      <button pButton type="button" (click)="inverse()" class="ui-button-secondary" icon="fa-check" iconPos="left" label="secondary"></button>
+      <button pButton type="button" (click)="count()" class="ui-button-success" icon="fa-check" iconPos="left" label="succes"></button>
+      <button pButton type="button" (click)="count()" class="ui-button-info" icon="fa-check" iconPos="left" label="info"></button>
+      <button pButton type="button" (click)="count()" class="ui-button-warning" icon="fa-check" iconPos="left" label="warning"></button>
+      <button pButton type="button" (click)="reset()" class="ui-button-danger" icon="fa-check" iconPos="right" label="reset" [disabled]="cDisabled"></button>
+    </h1>
+  </div>
+</div>
