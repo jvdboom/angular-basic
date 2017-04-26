@@ -57,3 +57,7 @@ Change app.module.ts
     ...
 
     npm install @types/lodash
+
+
+    20170426
+    Trying to build in some authorization/authentication
