@@ -1,3 +1,33 @@
-<p>
-  database-info works!
-</p>
+<div class="ui-g-6">
+  <p-dataTable #dataTable [value]="cTables$ | async" expandableRows="true" (onLazyLoad)="handleLazyLoad($event)" (onRowSelect)="handleRowSelect($event)"
+    (onRowExpand)="handleRowExpand($event)"
+    [rows]="10" [paginator]="true" [pageLinks]="5" [rowsPerPageOptions]="[5,10,20]">
+    <p-column expander="true" styleClass="col-icon" [style]="{'width':'40px'}"></p-column>
+    <p-column field="TABLE_NAME" header="Table Name"
+    [filter]="true" filterPlaceholder="Search" [sortable]="true"></p-column>
+    <ng-template let-cTable pTemplate="rowexpansion">
+      <div class="ui-grid-col-11">
+        <p-dataTable [value]="cColumns$ | async">
+          <p-column field="COLUMN_NAME" header="Name"></p-column>
+          <p-column field="IS_NULLABLE" header="Nullable"></p-column>
+          <p-column field="DATA_TYPE" header="DataType"></p-column>
+          <p-column field="CHARACTER_MAXIMUM_LENGTH" header="MaxLenght"></p-column>
+        </p-dataTable>
+      </div>
+    </ng-template>
+  </p-dataTable>
+</div>
+<div class="ui-g-6">
+  <p-panel header="Table Content" styleClass="panel-content">
+    <div>
+      <pre>{{(cTableContent$ | async) | json}}</pre>
+    </div>
+  </p-panel>
+  <!--
+    <p-panel header="Result" styleClass="panel-content">
+      <div>
+        <pre>{{cTableContent | json}}</pre>
+      </div>
+    </p-panel>
+  -->
+</div>

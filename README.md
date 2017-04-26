@@ -56,3 +56,4 @@ Change app.module.ts
     git push -u origin master
     ...
 
+    npm install @types/lodash

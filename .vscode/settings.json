@@ -1,0 +1,8 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "typescript.implementationsCodeLens.enabled": true,
+    "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.presets.angular": true
+}

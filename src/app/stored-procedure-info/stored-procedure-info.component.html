@@ -1,0 +1,31 @@
+<div class="ui-g-6">
+  <p-dataTable #dataTable [value]="cStoredProcedures$ | async" expandableRows="true" (onLazyLoad)="handleLazyLoad($event)"
+    (onRowSelect)="handleRowSelect($event)" (onRowExpand)="handleRowExpand($event)" (onRowCollapse)="handleRowCollapse()"
+    [rows]="10" [paginator]="true" [pageLinks]="5" [rowsPerPageOptions]="[5,10,20]">
+    <p-column expander="true" styleClass="col-icon" [style]="{'width':'40px'}"></p-column>
+    <p-column field="SPECIFIC_NAME" header="Stored Procedure Name"
+    [filter]="true" filterPlaceholder="Search" [sortable]="true"></p-column>
+    <p-column field="LAST_ALTERED" header="Altered"></p-column>
+    <ng-template let-cStoredProcedure pTemplate="rowexpansion">
+      <div class="ui-grid-col-12">
+        <p-dataTable [value]="cStoredProcedureParameters$ | async">
+          <p-column field="Name" header="Parameter"></p-column>
+          <p-column field="Type" header="DataType"></p-column>
+          <p-column field="Length" header="Max"></p-column>
+        </p-dataTable>
+      </div>
+    </ng-template>
+  </p-dataTable>
+</div>
+<div class="ui-g-6">
+  <p-panel header="Definition" styleClass="panel-content">
+    <!--<p-panel header="Result" styleClass="panel-content">
+      <div>
+        <pre>{{(cStoredProcedureParameters$ | async) | json}}</pre>
+      </div>
+    </p-panel>-->
+    <div>
+      {{ cDefinition }}
+    </div>
+  </p-panel>
+</div>

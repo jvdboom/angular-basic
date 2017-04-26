@@ -1,0 +1,25 @@
+<div class="ui-g-6">
+  <p-panel header="Tenants Testing" styleClass="panel-content">
+    <div>
+      <pre>{{(cTenantsTest$ | async) | json}}</pre>
+    </div>
+  </p-panel>
+   <p-panel header="Form Testing" styleClass="panel-content">
+    <div>
+
+       
+    <!--<div class="debug">
+        <h3>Form Value:</h3>
+        {{ f.value | json }}            
+    </div>-->
+      
+    </div>
+  </p-panel>
+</div>
+<div class="ui-g-6">
+  <p-panel header="Tenants" styleClass="panel-content">
+    <div>
+      <pre>{{(cTenants$ | async) | json}}</pre>
+    </div>
+  </p-panel>
+</div>
